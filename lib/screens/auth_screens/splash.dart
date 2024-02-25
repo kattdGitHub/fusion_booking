@@ -3,14 +3,14 @@ import 'package:fusion_booking/screens/auth_screens/login_screen.dart';
 import 'package:fusion_booking/utils/font_faimly.dart';
 import 'package:fusion_booking/utils/navigator.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(

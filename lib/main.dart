@@ -9,31 +9,42 @@ import 'package:fusion_booking/screens/home/restaurant_home_page.dart';
 import 'package:fusion_booking/screens/home/slider_card.dart';
 
 import 'Restaurant/restaurant.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-
   Widget build(BuildContext context) {
     AppConfig.init(context);
-    return  MaterialApp(
-      title: "Rserva",
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-     theme: MyTheme.lightTheme(context),
-      darkTheme: MyTheme.darkTheme(context),
-      home:const MyHomePage(),
+    return ScreenUtilInit(
+      designSize: const Size(
+        360,
+        690,
+      ),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MultiProvider(
+          providers: [],
+          child: MaterialApp(
+            title: "Fusion",
+            debugShowCheckedModeBanner: false,
+            themeMode: ThemeMode.light,
+            theme: MyTheme.lightTheme(context),
+            darkTheme: MyTheme.darkTheme(context),
+            home: const SplashScreen(),
+          ),
+        );
+      },
     );
   }
 }
