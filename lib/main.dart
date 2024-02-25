@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fusion_booking/Savebth/savebtn.dart';
 import 'package:fusion_booking/Theme/theme.dart';
 import 'package:fusion_booking/app_config/app_config.dart';
@@ -7,6 +9,7 @@ import 'package:fusion_booking/screens/auth_screens/login_screen.dart';
 import 'package:fusion_booking/screens/auth_screens/splash.dart';
 import 'package:fusion_booking/screens/home/restaurant_home_page.dart';
 import 'package:fusion_booking/screens/home/slider_card.dart';
+import 'package:provider/provider.dart';
 
 import 'Restaurant/restaurant.dart';
 import 'firebase_options.dart';
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
         return MultiProvider(
           providers: [],
           child: MaterialApp(
-            title: "Fusion",
+            title: "Fusion Booking",
             debugShowCheckedModeBanner: false,
             themeMode: ThemeMode.light,
             theme: MyTheme.lightTheme(context),
